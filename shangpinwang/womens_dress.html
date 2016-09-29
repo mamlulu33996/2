@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset = "utf-8" />
+	<title>女装</title>
+	<link rel="stylesheet" type="text/css" href="css/women.css"/>
+	<link rel="stylesheet" type="text/css" href="css/public.css"/>	
+	<link rel="stylesheet" type="text/css" href="css/nav.css"/>
+	<script type="text/javascript" src = "ajax.js"></script> 
+	<script type="text/javascript" src = "jquery-1.10.1.min.js"></script>
+	<script type="text/javascript" src = "index.js"></script>  
+	<script type="text/javascript" src = "nav.js"></script>
+	<script type="text/javascript" src = "womens_dress.js"></script>
+	<script type="text/javascript" src = "womens_dress_container.js"></script>
+	<script type="text/javascript" src = "brand_list2.js"></script>
+	<script type="text/javascript" src = "jquery-1.7.1.js"></script>
+	<script type="text/javascript" src = "jquery.cookie.js"></script>
+</head>
+<body>
+	<!-- **loginbar********************************************* -->
+	<div id = "loginbar">
+		<div class= "wrap">
+			<!-- <div class= "shopping_box"> -->
+				<a href="#" class= "shopping_box">
+					<div class = "shopping_bag">购物袋
+						<span class = "shopping_num">(0)</span>&nbsp;
+						<div class = "shopCar_btn"></div>
+					</div>
+					<div class = "shopping_list">你的购物车中暂无商品，<br/>快去挑选喜欢的商品吧。</div>
+				</a>
+			<!-- </div> -->
+			<div class = "loginbar_r">
+				<span calss = "span1">欢迎来到尚品网，</span><a href="#">登录&nbsp; |  &nbsp;</a> <a href="#">注册</a>
+			</div>
+		</div>
+	</div>
+
+<!-- **header********************************************* -->
+	<div id = "header">
+		<div class = "wrap">
+			<div class="logo"><img src = "img/logo.jpg"/></div>
+			<div class = "search">
+				<input type = "text" placeholder="2016早秋新品" class = "search_input"/>
+				<input type = "submit" class="search_btn" />
+			</div>
+		</div>
+	</div>
+
+<!-- **nav********************************************* -->
+	<div id = "nav">
+		<div class = "wrap">
+			<ul class = "nav_ul">
+				<li><a href="index.html">首页</a></li>
+				<li><a href="#">当季新品</a></li>
+				<li  class = "nav_h"><a href="womens_dress.html">女装</a>
+				<div class = "nav_list"></div></li>
+				<li class = "nav_h"><a href="#">女鞋</a>
+				<div class = "nav_list"></div>	</li>
+				<li class = "nav_h"><a href="#">男装</a>
+				<div class = "nav_list"></div></li>
+				<li class = "nav_h"><a href="#">男鞋</a>
+				<div class = "nav_list"></div></li>
+				
+				<li class = "nav_h"><a href="#">箱包</a></li>
+				<div class = "nav_list"></div>
+				<li><a href="#">配件</a></li>
+				<li><a href="#">运动馆</a></li>
+				<li><a href="#">设计师</a></li>
+				<li><a href="#">品牌</a></li>
+				<li><a href="#">TOPSHOP</a></li>
+				<li><a href="#">TOPMAN</a></li>
+				<li><a href="#">SALE</a></li>
+			</ul>	
+		</div>
+	</div>
+
+
+<!-- **main********************************************* -->		
+
+	<div id = "main">
+		<div class = "wrap">
+			<div id = "women">
+				<!--左侧面栏-->
+				<div id = "women_l">
+					<div class = "women_l1">全部女装</div>
+					<div class = "women_l2"></div>
+				</div>
+
+				<!--内容-->
+				<div id = "women_r">
+					<!--选项栏1-->
+					<div class = "list_filter">
+						<!--选项栏1-->
+						<div class = "list_filter1">
+							<!--品牌-->
+							<div class = "brand_list">
+								<div class = "brand_list1">品牌<p class = "bg_icon"></p></div>
+								<div class = "brand_list2">
+									<dl class = "all_brand">
+										<dt>全部品牌&nbsp;:</dt>
+										<dd class = "all_brand1">
+											<a href = "#bp1" class = "allbtn">a</a> <a href = "#bp2"  class = "allbtn">b</a>
+											 <a href = "#bp3" class = "allbtn">c</a> <a href = "#bp4" class = "allbtn">d</a> <a href = "#bp5" class = "allbtn">e</a> <a href = "#bp6" class = "allbtn">f</a>
+										</dd>
+									</dl>
+									<div class = "brand_abc"></div>
+								</div>
+							</div>
+							<!--颜色-->
+							<div class = "color_list">
+								<div class = "color_list1">颜色<p class = "bg_icon1"></p></div>
+								<div class = "color_list2">
+									<a href="#">白色</a><a href="#">黑色</a><a href="#">红色</a><a href="#">粉色</a>
+									<a href="#">橙色</a><a href="#">黄色</a><a href="#">绿色</a><a href="#">蓝色</a>
+									<a href="#">紫色</a><a href="#">灰色</a><a href="#">棕色</a><a href="#">米色</a>
+									<a href="#">金属色</a><a href="#">多色</a>
+								</div>
+							</div>
+							<!--尺码-->
+							<div class = "size_list">
+								<div class = "size_list1">尺码<p class = "bg_icon2"></p></div>
+								<div class = "size_list2">
+									<dl>
+										<dt>国际码</dt>
+										<dd>
+											<a href="#">XXS</a><a href="#">XS</a><a href="#">S</a><a href="#">M</a><a href="#">L</a>
+											<a href="#">XL</a><a href="#">XXL</a><a href="#">XXXL</a><a href="#">XXXXL</a><a href="#">XXXXXL</a>
+											<a href="#">均码</a>
+										</dd>
+
+										<dt>欧洲码</dt>
+										<dd>
+											<a href="#">70A</a><a href="#">70B</a><a href="#">70C</a><a href="#">70D</a><a href="#">70E</a>
+											<a href="#">75A</a><a href="#">75B</a><a href="#">75C</a><a href="#">75D</a><a href="#">75E</a><a href="#">75F</a>
+											<a href="#">80A</a><a href="#">80B</a><a href="#">80C</a><a href="#">80D</a><a href="#">80E</a><a href="#">80F</a>
+											<a href="#">85A</a><a href="#">85B</a><a href="#">85C</a><a href="#">85D</a><a href="#">85E</a><a href="#">85F</a>
+											<a href="#">90B</a><a href="#">90C</a><a href="#">90D</a><a href="#">90E</a><a href="#">95D</a>
+										</dd>
+
+										<dt>腰围</dt>
+										<dd>
+											<a href="#">M/L</a><a href="#">XS/S</a><a href="#">23</a><a href="#">24</a><a href="#">25</a>
+											<a href="#">26</a><a href="#">27</a><a href="#">28</a><a href="#">29</a><a href="#">30</a>
+											<a href="#">31</a><a href="#">32</a><a href="#">32</a><a href="#">33</a><a href="#">34</a>
+											<a href="#">35</a><a href="#">36</a><a href="#">37</a><a href="#">38</a><a href="#">39</a>
+											<a href="#">40</a><a href="#">41</a><a href="#">42</a><a href="#">43</a><a href="#">44</a>
+										</dd>
+
+										<dt>尺寸</dt>
+										<dd>
+											<a href="#">90</a><a href="#">95</a>
+										</dd>
+									</dl>
+								</div>
+							</div>
+							<!--价格区间-->
+							<div class = "price_size">
+								<div class = "price_size1">价格区间<p class = "bg_icon3"></p></div>
+								<div class = "price_size2">
+									<a href="#">0-400元</a>
+									<a href="#">500-1000元</a>
+									<a href="#">1000-2000元</a>
+									<a href="#">2000-3000元</a>
+									<a href="#">3000-4000元</a>
+									<a href="#">4000-5000元</a>
+									<div class = "price_interval">
+										<input type = "text" value = "￥" id = "price_low"/>
+										<span>-</span>
+										<input type = "text" value = "￥" id = "price_high"/>
+										<input type = "submit" value = "确定" id = "submit"/>
+									</div>
+								</div>
+							</div>
+							<!--排序-->
+							<div class = "sort_list">
+								<div class = "sort_list1">排序&nbsp;:&nbsp;&nbsp;&nbsp;查看全部<p class = "bg_icon4"></p></div>
+								<div class = "sort_list2">
+									<a href="#">查看全部</a>
+									<a href="#">价格从低到高</a>
+									<a href="#">价格从高到低</a>
+									<a href="#">按上架时间</a>
+								</div>
+							</div>
+						</div>
+						<!--选项栏2-->
+						<div class = "list_filter2">
+							<div class = "list_filter21">
+								全部<input type = "radio" checked = "checked" name = "ral"/>&nbsp;&nbsp;
+								新品<input type = "radio" name = "ral"/>&nbsp;&nbsp;
+								促销<input type = "radio" name = "ral"/>&nbsp;&nbsp;
+							</div>
+							<div class = "list_filter22">
+								共<span class = "goods_num">12345</span>个商品&nbsp;
+								<a href = "#" class = "page_first">首页</a> &nbsp;
+								<a href="#" class = "front">&lt;</a>&nbsp;
+								<span class = "page1">0</span>/<span class = "page1">165</span>&nbsp;
+								<a href="#" class = "back">&gt;</a>&nbsp;
+								<a href="#" class = "#">下一页</a>
+							</div>
+						</div>			
+					</div><!-- list_filter -->
+					
+					<!-- 商品区 -->
+					<div id = "skirt_container">
+						<ul id = "oul">
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+						</ul>	
+					</div>		
+
+				</div><!-- women_r -->
+			</div><!-- women -->
+		</div><!-- wrap -->
+	</div><!-- main -->
+
+	<div id = "tel"></div>
+
+
+
+	<!-- **bottom********************************************* -->		
+	<div id = "bottom">
+		<div class = "wrap">
+			<div class = "bottom_a">
+				<div class = "bottom1">
+					<dl>
+						<dt><a href="#">售后服务</a></dt>
+						<dd><a href="#">退换货流程</a></dd>
+						<dd><a href="#">退换货政策</a></dd>
+						<dd><a href="#">退换货地址</a></dd>
+						<dd><a href="#">退款说明</a></dd>
+						<dd><a href="#">售后维修</a></dd>
+					</dl>
+				</div>
+				<div class = "bottom2">
+					<dl>
+						<dt><a href="#">配送说明</a></dt>
+						<dd><a href="#">配送范围</a></dd>
+						<dd><a href="#">配送费用及时效</a></dd>
+						<dd><a href="#">无货/配货异常处理办法</a></dd>
+					</dl>
+				</div>
+				<div class = "bottom3">
+					<dl>
+						<dt><a href="#">支付方式</a></dt>
+						<dd><a href="#">在线支付</a></dd>
+						<dd><a href="#">货到付款</a></dd>
+					</dl>
+				</div>
+				<div class = "bottom4">
+					<dl>
+						<dt>扫描尚品二维码</dt>
+						<dd><img src="img/download.png"/></dd>
+					</dl>
+				</div>
+				<div class = "bottom5">
+					<div class = "weixin">尚品网官方微信</div>
+					<div class = "weibo">尚品网官方微博</div>
+				</div>
+				<div class = "bottom6">
+					<span class = "b_tel1">客户服务热线 Customer service hotline</span>
+					<span class = "b_tel2">4006-900-900</span>
+					<span class = "b_tel3">（早08:00-晚22:00） </span>
+				</div>
+			</div>
+
+			<div class = "bottom_b">
+				<a href="#" class = "list1"></a>
+				<a href="#" class = "list2"></a>
+				<a href="#" class = "list3"></a>
+			</div>
+
+			<div class = "bottom_c">
+				<a href="#">关于尚品</a>
+				<a href="#">尚品新闻</a>
+				<a href="#">招聘新闻</a>
+				<a href="#">品牌招商</a>
+				<a href="#">帮助中心</a>
+				<a href="#">联系我们</a>
+				<a href="#">友情链接</a>
+				<a href="#">网站地图</a>
+				<a href="#">搜索直通车</a>
+			</div>
+		</div>
+	</div>
+
+<!-- **footer********************************************* -->	
+	<div id = "footer">
+		<div class = "wrap">
+			<div class = "footer1"> <a href="#">京公网安备110105001984</a>&nbsp;<a href="#">京ICP备09087291号-2</a>&nbsp;<a href="#">京ICP证090703号Copyright</a>&nbsp; © 2010-2016 Shangpin.com All Rights Reserved </div>
+			<div class = "footer2">
+				<a href="#"><img src = "img/foot5.gif"/></a>
+				<a href="#"><img src = "img/foot5.gif"/></a>
+				<a href="#"><img src = "img/foot5.gif"/></a>
+				<a href="#"><img src = "img/foot5.gif"/></a>
+				<a href="#"><img src = "img/foot5.gif"/></a>
+				<a href="#"><img src = "img/foot5.gif"/></a>
+				<a href="#"><img src = "img/foot5.gif"/></a>
+				<a href="#"><img src = "img/foot5.gif"/></a>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

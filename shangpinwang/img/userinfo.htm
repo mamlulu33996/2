@@ -1,0 +1,37 @@
+
+
+var template =   "<li>欢迎来到尚品网，<a class='unLogin' id='NologinUrl' href='http://login.shangpin.com' title='登录'>登录</a>|</li>" +
+	"<li><a class='unLogin' id='NoRegUrl' href='http://login.shangpin.com/Login/Register' title='注册'>注册</a></li>" +
+    
+	"<li><a id='spNewHeader_shopcart' href='http://login.shangpin.com'><span class='shopcart'></span>购物袋<ins>(0)</ins></a></li><input type='hidden' id='isLogin' value='' />";
+
+(function(){
+    var id=document.getElementById('sp_newHeader_loginForm');
+    if(id){
+        id.innerHTML=template;
+var url="?returnUrl="+encodeURIComponent(window.location.href);
+        loader.using("https://loginjs.shangpin.com/ResourceHandler.ashx?f=~/shangpin/Scripts/live/dev/core/config_newuserfn/js&amp;d=20160901&amp;https=1&amp;v=20160909063930").excute();
+        document.getElementById('NologinUrl').href='http://login.shangpin.com'+url;
+        document.getElementById('NoRegUrl').href='http://login.shangpin.com'+'/Login/Register'+url;
+        document.getElementById('spNewHeader_shopcart').href='http://login.shangpin.com'+'?returnUrl=http://trade.shangpin.com/trade/cart';
+    }
+})();
+
+
+$(function() {
+    if(loader)
+    {
+        $.ajax({
+                url: "http://account.shangpin.com/account/getinfocount",
+                type: "get",
+                jsonp:"callback",
+                dataType: "jsonp"
+            }).done(function (data) {             
+            
+                if (data.cart) {
+                
+                    $("#spNewHeader_shopcart>ins").text("(" + data.cart + ")");
+                }
+            });
+    }
+});

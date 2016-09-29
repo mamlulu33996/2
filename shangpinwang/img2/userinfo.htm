@@ -1,0 +1,93 @@
+
+
+
+var template = "<input type='hidden' id='type'/><li>欢迎<span  id='currentUser'>Moji李,普通会员</span></li>"
++"<li><a id='spNewHeader_usercenter' href='http://account.shangpin.com/account'>个人中心</a>|</li>"
+
++"<li><a id='spNewHeader_shopcart' class='logined' href='http://trade.shangpin.com/trade/cart'><span class='shopcart'></span>购物袋<ins>(0)</ins></a></li><input type='hidden' id='isLogin' value='0' />";
+
+var template2 = "<input type='hidden' id='type' /><li>欢迎<span id='currentUser'>Moji李,普通会员</span></li>"
++"<li><a id='spNewHeader_usercenter' href='http://account.shangpin.com/account'>个人中心</a>|</li>"
+
++"<input type='hidden' id='isLogin' value='0' />";
+
+
+(function(){
+var id=document.getElementById('sp_newHeader_loginForm');
+if(id){
+id.innerHTML=template;
+if($("#type").val().length>0)
+{
+id.innerHTML=template2;
+}
+loader.using("https://loginjs.shangpin.com/ResourceHandler.ashx?f=~/shangpin/Scripts/live/dev/core/config_newuserfn/js&amp;d=20160901&amp;https=1&amp;v=20160909063930").excute();
+}
+if (loader) {
+
+//显示小能插件
+$("#right-toolbar").show();
+
+
+        var getItemId = function () {
+              var returnValue = null;
+            var hidSkuNo = document.getElementById("skuno");
+            if (hidSkuNo != null) {
+                returnValue = hidSkuNo.value;
+            }
+            return returnValue;
+            }
+							
+
+
+
+$.ajax({
+                                url: "http://account.shangpin.com/account/getinfocount",
+                                type: "get",
+                                jsonp:"callback",
+                                dataType: "jsonp"
+                            }).done(function (data) {
+                                
+                                if (data.order) {
+                                    $("#spNewHeader_order>ins").text("(" + data.order + ")");
+                                }
+                                if (data.cart) {
+                                    $("#spNewHeader_shopcart>ins").text("(" + data.cart + ")");
+                                }
+                                if (data.notice) {
+                                    $("#spNewHeader_notice>ins").text("(" + data.notice + ")");
+                                }
+                                if (data.cash) {
+                                    $("#spNewHeader_coupons>ins").text("(" + data.cash + ")");
+                                }
+
+
+//
+   NTKF_PARAM = {
+                                      siteid:"kf_9986",
+                                      settingid: "kf_9986_1355827406710",
+                                      itemid: getItemId(),
+                                      uid:data.UserId, 
+                                      uname: data.uid,
+                                      userlevel:""+data.userLevel+""
+};
+
+   $(function() {
+                                loader.using("http://download.ntalker.com/t2ds/ntkfstat.js");
+});
+
+                            if(data.Gender==1)
+                            {            
+                                 $("#spLogo_logo").attr("href","/men");
+                            }
+//
+}).fail(function () {
+                                return false;
+});
+
+
+
+//
+}
+
+})();
+

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset = "utf-8" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/public.css"/>	
+	<link rel="stylesheet" type="text/css" href="css/nav.css"/>
+	<link rel="stylesheet" type="text/css" href="css/log_in.css"/>	 
+	<script type="text/javascript" src = "tool.js"></script>
+	<script type="text/javascript">
+		window.onload = function(){
+
+
+			$(".input1")[0].onblur = function(){
+				var oValue = $(".input1")[0].value.replace(/ /g, "");
+				$(".input1")[0].value = oValue;
+				if(oValue.length > 18 || oValue.length < 6){
+					$(".span1")[0].innerHTML = "用户名长度在6到18位之间";
+				}else if(oValue[0] <= 9 || oValue[0] >= 0){
+					$(".span1")[0].innerHTML = "用户名首字母不能为数字";
+				}
+			}
+
+
+/*			$(".input2")[0].onblur = function(){
+				var ovalue = $(".input2").value.replace(/ /g, "");
+				$(".input2")[0].value = ovalue;
+				if(ovalue.length > 18 || ovalue.length < 6){
+					$(".span1")[0].innerHTML = "密码长度在6到18位之间";
+				}
+			}
+*/
+
+			$(".input2")[0].onblur = function(){
+				var oValue = $(".input2")[0].value.replace(/ /g, "");
+				$(".input2")[0].value = oValue;
+				if(oValue.length > 18 || oValue.length < 6){
+					$(".span2")[0].innerHTML = "用户名长度在6到18位之间";
+				}
+			}
+
+
+
+			$(".input3")[0].onblur = function(){
+
+				if($(".input3")[0].value != $(".btnClick")[0].innerHTML){
+					$(".span3")[0].innerHTML = "×";
+					//alert("×");
+				}
+				else if($(".input3")[0].value == $(".btnClick")[0].innerHTML){
+					$(".span3")[0].innerHTML = "√";
+
+					//alert("√");
+				}
+			}
+			$(".btnClick")[0].innerHTML = textCode(4);
+
+			$(".btnClick1")[0].onclick = function(){
+				$(".btnClick")[0].innerHTML = textCode(4);
+			}
+
+			$(".enter1")[0].onclick = function(){
+				if(getCookie("用户名") != undefined && getCookie("密码") != undefined){
+					if($(".input3")[0].value == $(".btnClick")[0].innerHTML){
+						setCookie("用户名", $(".input1")[0].value, getDate(7));
+						setCookie("密码", $("input2")[0].value, getDate(7));
+						alert("登录成功");
+					}
+				}
+			}
+
+
+		}
+
+		function textCode(n){
+				var arr = [];
+				for(var i = 0; i < n; i++){
+					var num = parseInt(Math.random()*100);
+					if(num >= 0 && num <= 9){
+						arr.push(num);
+					}else if(num >= 10 && num <= 35 ){
+						arr.push(String.fromCharCode(num + 87));
+					}else if(num >= 65 && num <= 90){
+						arr.push(String.fromCharCode(num));
+					}else{
+						i--;
+					}
+				}
+				return arr.join("");
+			}
+
+
+			function getDate(n){
+				var d = new Date();
+				var num = d.getDate();
+				d.setDate(num + n);
+					return d;
+			}
+
+
+
+
+
+
+
+	</script>
+</head>
+<body>
+
+
+<div class = "logo"><a href = "#"><img src = "img/logo.png"/></a></div>
+
+<div class = "enter">
+	<div class = "enter_l">
+		<div class = "title"><p>登录</p></div>
+		<input type = "text" placeholder = "请输入已验证手机或邮箱" class = "input1"/><span class = "span1"></span>
+		<input type = "text" placeholder = "请输入密码" class = "input2"/><span class = "span2"></span>
+		<input type = "text" placeholder = "请输入验证码" class = "input3" /><span class = "span3"></span>
+		<div class = "enter_l1"><button class = "btnClick"></button><span class= "btnClick1">换一换</span></div>
+		
+		<a href="#" class = "mima">忘记密码</a>
+		<input type = "submit" value = "登录" class = "enter1"/>
+		<div class = "enter_l2"><span>没有尚品网账号？</span><a href="#">注册新会员</a></div>
+	</div>
+	<div class = "enter_r">
+		<img src = "img3/aaa.jpg"/>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- **bottom********************************************* -->		
+	<div id = "bottom">
+		<div class = "wrap">
+<!-- 			<div class = "bottom_a">
+				<div class = "bottom1">
+					<dl>
+						<dt><a href="#">售后服务</a></dt>
+						<dd><a href="#">退换货流程</a></dd>
+						<dd><a href="#">退换货政策</a></dd>
+						<dd><a href="#">退换货地址</a></dd>
+						<dd><a href="#">退款说明</a></dd>
+						<dd><a href="#">售后维修</a></dd>
+					</dl>
+				</div>
+				<div class = "bottom2">
+					<dl>
+						<dt><a href="#">配送说明</a></dt>
+						<dd><a href="#">配送范围</a></dd>
+						<dd><a href="#">配送费用及时效</a></dd>
+						<dd><a href="#">无货/配货异常处理办法</a></dd>
+					</dl>
+				</div>
+				<div class = "bottom3">
+					<dl>
+						<dt><a href="#">支付方式</a></dt>
+						<dd><a href="#">在线支付</a></dd>
+						<dd><a href="#">货到付款</a></dd>
+					</dl>
+				</div>
+				<div class = "bottom4">
+					<dl>
+						<dt>扫描尚品二维码</dt>
+						<dd><img src="img/download.png"/></dd>
+					</dl>
+				</div>
+				<div class = "bottom5">
+					<div class = "weixin">尚品网官方微信</div>
+					<div class = "weibo">尚品网官方微博</div>
+				</div>
+				<div class = "bottom6">
+					<span class = "b_tel1">客户服务热线 Customer service hotline</span>
+					<span class = "b_tel2">4006-900-900</span>
+					<span class = "b_tel3">（早08:00-晚22:00） </span>
+				</div>
+			</div>
+
+			<div class = "bottom_b">
+				<a href="#" class = "list1"></a>
+				<a href="#" class = "list2"></a>
+				<a href="#" class = "list3"></a>
+			</div>
+ -->
+			<div class = "bottom_c">
+				<a href="#">关于尚品</a>
+				<a href="#">尚品新闻</a>
+				<a href="#">招聘新闻</a>
+				<a href="#">品牌招商</a>
+				<a href="#">帮助中心</a>
+				<a href="#">联系我们</a>
+				<a href="#">友情链接</a>
+				<a href="#">网站地图</a>
+				<a href="#" class = "last">搜索直通车</a>
+			</div>
+		</div>
+	</div>
+
+<!-- **footer********************************************* -->	
+	<div id = "footer">
+		<div class = "wrap">
+			<div class = "footer1"> <a href="#">京公网安备110105001984</a>&nbsp;<a href="#">京ICP备09087291号-2</a>&nbsp;<a href="#">京ICP证090703号Copyright</a>&nbsp; © 2010-2016 Shangpin.com All Rights Reserved </div>
+			<div class = "footer2">
+				<a href="#"><img src = "img/foot5.gif"/></a>
+				<a href="#"><img src = "img/foot5.gif"/></a>
+				<a href="#"><img src = "img/foot5.gif"/></a>
+				<a href="#"><img src = "img/foot5.gif"/></a>
+				<a href="#"><img src = "img/foot5.gif"/></a>
+				<a href="#"><img src = "img/foot5.gif"/></a>
+				<a href="#"><img src = "img/foot5.gif"/></a>
+				<a href="#"><img src = "img/foot5.gif"/></a>
+			</div>
+		</div>
+	</div>
+
+
+</body>
+</html>
